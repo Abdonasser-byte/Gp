@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> hefas </h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+         {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+      
+      {% if img_obj %}
+        <br>
+        <img src="{{img_obj.image.url}}" alt="connect" style="max-height:300px">
+        <br><br>
+        <img src="{{ image_url }}" alt="Predicted Mask">
+      {% endif %}
+</body>
+</html>
+    
+  
